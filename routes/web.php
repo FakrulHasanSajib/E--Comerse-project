@@ -29,3 +29,28 @@ route::post('/uploadproduct',[AdminController::class,'uploadproduct']);
 route::get('/showproduct',[AdminController::class,'showproduct']);
 
 route::get('/deleteproduct/{id}',[AdminController::class,'deleteproduct']);
+
+route::get('/updateview/{id}',[AdminController::class,'updateview']);
+
+route::post('/updateproduct/{id}',[AdminController::class,'updateproduct']);
+
+route::get('/search',[HomeController::class,'search']);
+
+route::post('/addcart/{id}',[HomeController::class,'addcart']);
+Route::get('/home', [HomeController::class, 'index'])
+->middleware('auth');
+
+
+route::get('/showcart',[HomeController::class,'showcart']);
+
+
+route::get('/delete/{id}',[HomeController::class,'deletecart']);
+
+
+Route::post('/order', [HomeController::class, 'confirmorder']);
+
+route::get('/showorder',[AdminController::class,'showorder']);
+
+
+
+route::get('/updatestatus/{id}',[AdminController::class,'updatestatus']);
